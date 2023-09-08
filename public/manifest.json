@@ -4,9 +4,23 @@
     "version": "1.0",
     "manifest_version": 3,
     "action": {
-        "default_popup": "index.html",
+        "default_popup": "popup.html",
         "default_title": "Open the popup"
     },
+    "content-scripts": [
+        {
+            "matches": [
+                "https://www.youtube.com/watch*"
+            ],
+            "run-at": "document_end",
+            "js": [
+                "./index.global.js"
+            ],
+            "css":[
+                "./style.css"
+            ]
+        }
+    ],
     "icons": {
         "16": "logo192.png",
         "48": "logo192.png",

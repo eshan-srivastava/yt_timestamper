@@ -1,28 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 
-const Button = () => {
-    const [time, setTime] = useState(0);
+interface currtime{
+    time: number;
+}
 
-    function captureTime(){
-        const video : HTMLMediaElement = document.querySelector('video')!;
-        // player.getVideoUrl():String
-        // const ytplayer = document.getElementById("movie_player")!;
-        // const time = ytplayer.getCurrentTime();
-        if (video === null){
-
-            console.log("No video source detected");
-        }
-        else{
-            const currtime = Math.floor(video.currentTime);
-            setTime(currtime);
-            console.log("Currently logged time: ", currtime);    
-        }
-    }
+const Button = (props: currtime) => {
     
     return (
         <>
-        <button className="border-black bg-red-700 text-white text-md px-6 rounded-full" type="button" onClick={captureTime}> Capture! </button>
-        <p className="text-sm mx-auto my-1">Timestamp captured is: {time}</p>
+        <button className="border-black bg-red-700 text-white text-md px-6 rounded-full" type="button"> Capture! </button>
+        <p className="text-sm mx-auto my-1">Timestamp captured is: {props.time}</p>
         
         </>
     )
