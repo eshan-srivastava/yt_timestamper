@@ -1,9 +1,7 @@
-import { ReactComponentElement, useState } from "react";
+import { useState } from "react";
 import { VideoCardProp, TimeInSec } from "../props";
 
 const VideoCard: React.FC<VideoCardProp> = (props) => {
-    const [isShown, setIsShown] = useState(false);
-
     const fmtName = (videoName: string): string => {
         const MAX_NAME_LENGTH = 15;
         let name = undefined;
