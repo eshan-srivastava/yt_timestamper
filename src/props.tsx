@@ -1,12 +1,12 @@
 export type TimeInSec = number;
 
-export interface URL {
+export type URL =  {
     baseUrl: string;
     watchedTime: TimeInSec;
     totalTime: TimeInSec;
 }
 
-export interface VideoCardProp {
+export type VideoCardProp = {
     name: string;
     url: URL;
 }
